@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My World Cup - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#1a1c1c",
+                      "error": "#ffb4ab",
+                      "surface-container-high": "#282a2b",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-tertiary": "#313030",
+                      "on-surface": "#e2e2e2",
+                      "surface-dim": "#121414",
+                      "on-primary": "#2c303d",
+                      "outline": "#909096",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "surface": "#121414",
+                      "inverse-primary": "#5a5e6d",
+                      "error-container": "#93000a",
+                      "secondary-container": "#af8d11",
+                      "primary-fixed-dim": "#c3c6d7",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "tertiary-container": "#0e0e0e",
+                      "surface-container-lowest": "#0c0f0f",
+                      "surface-container-highest": "#333535",
+                      "surface-bright": "#37393a",
+                      "secondary-fixed-dim": "#e9c349",
+                      "on-tertiary-container": "#7d7b7a",
+                      "background": "#121414",
+                      "secondary": "#e9c349",
+                      "outline-variant": "#46464c",
+                      "primary": "#c3c6d7",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#333535",
+                      "inverse-on-surface": "#2f3131",
+                      "on-secondary-fixed": "#241a00",
+                      "on-error": "#690005",
+                      "primary-fixed": "#dfe2f3",
+                      "tertiary-fixed": "#e5e2e1",
+                      "surface-tint": "#c3c6d7",
+                      "primary-container": "#0a0e1a",
+                      "on-primary-fixed-variant": "#434654",
+                      "tertiary": "#c9c6c5",
+                      "secondary-fixed": "#ffe088",
+                      "on-primary-container": "#777b8a",
+                      "surface-container": "#1e2020",
+                      "on-secondary": "#3c2f00",
+                      "inverse-surface": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c9c6c5",
+                      "on-surface-variant": "#c7c6cc",
+                      "on-primary-fixed": "#171b28",
+                      "on-secondary-container": "#342800",
+                      "on-background": "#e2e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "container-max": "1440px",
+                      "margin-mobile": "20px",
+                      "unit": "8px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Hanken Grotesk"],
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-md": ["Bodoni Moda"],
+                      "headline-lg-mobile": ["Bodoni Moda"],
+                      "headline-lg": ["Bodoni Moda"],
+                      "body-md": ["Hanken Grotesk"],
+                      "display-hero": ["Bodoni Moda"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                      "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-hero": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface-dim');
+            color: theme('colors.on-surface');
+            overflow-x: hidden;
+        }
+        
+        .shadow-glow {
+            text-shadow: 0 0 20px rgba(233,195,73,0.5);
+        }
+        
+        .glass-panel {
+            background: rgba(40, 42, 43, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-panel-gold-border {
+            background: rgba(12, 15, 15, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid theme('colors.secondary');
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .paper-cut-shadow {
+            box-shadow: 4px 4px 0px 0px theme('colors.surface-container-lowest');
+        }
+
+        .stadium-glow {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vw;
+            max-width: 1200px;
+            max-height: 1200px;
+            background: radial-gradient(circle, rgba(233,195,73,0.05) 0%, rgba(18,20,20,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-lowest');
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.surface-variant');
+            border-radius: theme('borderRadius.full');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative">
+<div class="stadium-glow"></div>
+<!-- TopAppBar -->
+<header class="bg-surface/40 dark:bg-surface-container-lowest/40 backdrop-blur-xl font-headline-md text-headline-md font-label-caps text-label-caps docked full-width top-0 sticky z-50 border-b border-white/10 dark:border-secondary/20 shadow-2xl flex justify-between items-center px-margin-desktop py-4 w-full">
+<div class="flex items-center gap-8">
+<div class="font-headline-lg text-headline-lg tracking-tighter text-secondary dark:text-secondary-fixed shadow-glow">WORLD CUP 26</div>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Match Center</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Standings</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Bracket</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform" href="#">Teams</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="language" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+<button class="hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="notifications" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-secondary-fixed transition-colors shadow-[0_0_15px_rgba(233,195,73,0.4)] scale-95 active:scale-90 transition-transform">Tickets</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 flex flex-col gap-16 z-10">
+<!-- User Profile Header -->
+<section class="flex flex-col md:flex-row items-center md:items-end justify-between gap-8 border-b border-white/10 pb-12">
+<div class="flex items-center gap-8">
+<div class="relative w-32 h-32 rounded-full overflow-hidden border-2 border-secondary p-1 shadow-glow paper-cut-shadow">
+<img alt="User Avatar" class="w-full h-full object-cover rounded-full" data-alt="A close up portrait of a passionate football fan, styled with premium cinematic lighting against a deep navy background. The subject is dramatically lit with soft rim light highlighting their features, creating a sophisticated editorial look. The mood is intense and focused, fitting for a high-end sports digital platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-evgIDM3wvixrzK4QjVSCfVbVopymZTdRTAPKVSl1t7L4ZPrXr-aN1nAJUah0bCPc1_i26FfYodMJOJJpd9MUOtAGzJ5b8AApRfLhq5_HJ2fWQKlIdrv_pxFl4EmlTQLED2bcRkbPd7D9brJ23UYTjRw4y4CBFms7AtF5B-skQbZmffVGcF0dGyhgjHXKmyzluktoUoxgJ-ka11DnZBleCVdzD7fOxNTiGqwDo0Pqdadf7WCHcvOWzOR4cdItmtXrPrOrfRBEsig"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-4">
+<h1 class="font-headline-lg text-headline-lg text-on-surface m-0 leading-none">ALEX MORGAN</h1>
+<span class="px-3 py-1 border border-secondary text-secondary rounded-full font-label-caps text-label-caps shadow-glow">PRO FAN</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Member since 2022 • Level 42</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">GLOBAL RANK</span>
+<span class="font-headline-md text-headline-md text-secondary">#4,021</span>
+</div>
+<div class="glass-panel px-6 py-4 rounded-xl flex flex-col items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PREDICTIONS</span>
+<span class="font-headline-md text-headline-md text-on-surface">68%</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column: Content Canvas -->
+<div class="lg:col-span-2 flex flex-col gap-12">
+<!-- Saved Matches -->
+<section class="flex flex-col gap-6">
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface m-0 leading-none">Saved Matches</h2>
+<a class="font-label-caps text-label-caps text-secondary hover:text-white transition-colors flex items-center gap-2" href="#">VIEW ALL <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-6 snap-x">
+<!-- Match Card 1 -->
+<div class="min-w-[320px] glass-panel-gold-border rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden group snap-start paper-cut-shadow">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 z-0 pointer-events-none"></div>
+<div class="flex justify-between items-center relative z-10">
+<span class="px-2 py-1 border border-white/20 rounded font-label-caps text-[10px] text-on-surface-variant">GROUP STAGE</span>
+<span class="font-label-caps text-[10px] text-secondary flex items-center gap-1"><div class="w-1.5 h-1.5 bg-secondary rounded-full animate-pulse"></div> UPCOMING</span>
+</div>
+<div class="flex justify-between items-center relative z-10">
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center overflow-hidden">
+<img alt="Team A Flag" class="w-full h-full object-cover" data-alt="A stylized, high-contrast abstract representation of a national flag waving dynamically. The lighting is dramatic, casting deep shadows against a dark, premium background. The colors are rich and saturated, evoking the passion of international sports competition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCevJsu3El4Qnt6gHA_RA_tZpKQk5iXJUXcuAyEXLqfayL53tFMUp_iVtDIMRsvKQ_FLKKnGi9vMnEON5AyBLdB9iIHGQdPQ34u0vzCesFG_u0MWm1dyC2JEK8oK5Vcc8o18NxN7B3wFCufcGT_JnuEkg81QXC-oUkkk_oXqFmaDCc5vSe6LkdXQ3Zts7iu9WttB52MdPpIYt5BImAnObAxcpcz4x_HxH_ORBuuATQaLdj4LwOwBHlk-mg86xB6VbWHe8TVlSUYf0"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">BRA</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-on-surface/50">VS</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant mt-2">JUN 18 • 20:00</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center overflow-hidden">
+<img alt="Team B Flag" class="w-full h-full object-cover" data-alt="A stylized, high-contrast abstract representation of a national flag waving dynamically. The lighting is dramatic, casting deep shadows against a dark, premium background. The colors are rich and saturated, evoking the passion of international sports competition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf7CYrYd4Wb0bSpPVBVXITOPvZEz0u9CLnvrHoEc78HiWQh7VW2zMPGcsjNH0NFbcZrQpEzPZfxcydcmK2sfxEr5UlAN33ooWIKVFFemH9N-BOWKQwLHOLLTCDH-wRYs9RA_5lb1EUjR0vofyFlSJZ54T7F-UtrYDoYc6lnt4kH9SrVr5YqX0K8zmcOjLOOK6sCB-udcEzKGehPN5d5E6GC2OzhZhROyQ40hjh48p4JKzZpag2IkyGyXL7Uhz271dqDERuhD66erw"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">FRA</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface font-label-caps text-label-caps rounded border border-white/5 hover:bg-secondary hover:text-on-secondary transition-all duration-300 relative z-10 group-hover:shadow-glow">VIEW DETAILS</button>
+</div>
+<!-- Match Card 2 -->
+<div class="min-w-[320px] glass-panel rounded-xl p-6 flex flex-col gap-6 relative overflow-hidden group snap-start">
+<div class="flex justify-between items-center relative z-10">
+<span class="px-2 py-1 border border-white/20 rounded font-label-caps text-[10px] text-on-surface-variant">ROUND OF 16</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">COMPLETED</span>
+</div>
+<div class="flex justify-between items-center relative z-10 opacity-70">
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center overflow-hidden">
+<img alt="Team C Flag" class="w-full h-full object-cover" data-alt="A stylized, high-contrast abstract representation of a national flag waving dynamically. The lighting is dramatic, casting deep shadows against a dark, premium background. The colors are rich and saturated, evoking the passion of international sports competition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoICZv333VkiXnE3A5Oum_ukRvWNJrNmnxOrJ9FOwLq9NY3n6TfCll1hu3UF7nHuh4YwnJ5riRc0NE7lK55pNdICpAxXHNAIrCBYQ1lmyAOPJgV6hFxDaBS8QGOZGyirLAQ7lxr804oFcZDCm3ooB_NCtieHXcr42wecXxpsq_V_7Fahj56GhqA1opDoBk0Xn_UwHlEe5lYTF2BTwt8dfkaxWx30y8EJ5XylGebFR4XVD_mDiyvUgWRFvNihaW0_-cRN2XmIRGob8"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">ARG</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-secondary">2 - 1</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant mt-2">FT</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest border border-white/10 flex items-center justify-center overflow-hidden">
+<img alt="Team D Flag" class="w-full h-full object-cover" data-alt="A stylized, high-contrast abstract representation of a national flag waving dynamically. The lighting is dramatic, casting deep shadows against a dark, premium background. The colors are rich and saturated, evoking the passion of international sports competition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmSAGwLjL47bKxYo8StvpwrWYtU3nvuuAhFsXXlljtBBpcr4KWsdVyJy_9i2jujhS0HYQqmUNPEVv8qI1wfbEn4GNYKjuOjxgevP7DPdlMt1KteSyjCaqMJFRDkzH2sYr0jhLel_WmwqsN_iLk1cyF78iT5N2vpUMfDNPakRuqZWAVoBe_yAnHiVkxlARqe-vk4utcLYPz13JBkMOcLJ960uJWcKi6utKxBxR-QII4eq4nBL78aREow4LS_jyYXwASzoPqLvpLepg"/>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface">GER</span>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-highest text-on-surface font-label-caps text-label-caps rounded border border-white/5 hover:bg-surface-bright transition-all duration-300 relative z-10">MATCH RECAP</button>
+</div>
+</div>
+</section>
+<!-- Predictions Bracket Teaser -->
+<section class="flex flex-col gap-6">
+<div class="flex justify-between items-end border-b border-white/10 pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface m-0 leading-none">My Bracket</h2>
+<a class="font-label-caps text-label-caps text-secondary hover:text-white transition-colors flex items-center gap-2" href="#">EDIT PREDICTIONS <span class="material-symbols-outlined text-sm" data-icon="edit">edit</span></a>
+</div>
+<div class="w-full h-64 rounded-xl border border-white/10 relative overflow-hidden bg-surface-container-lowest paper-cut-shadow">
+<!-- Abstract Background for bracket area -->
+<div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 50% 50%, rgba(233,195,73,0.1) 0%, transparent 60%);"></div>
+<div class="absolute inset-0 flex items-center justify-center p-8">
+<div class="flex w-full h-full items-center justify-between opacity-80">
+<!-- Fake Bracket Lines Left -->
+<div class="flex flex-col justify-around h-full border-r border-white/20 pr-4">
+<div class="w-16 h-8 border-b border-white/20"></div>
+<div class="w-16 h-8 border-t border-b border-white/20"></div>
+</div>
+<!-- Center Trophy Area -->
+<div class="flex flex-col items-center gap-4 z-10">
+<span class="material-symbols-outlined text-secondary text-5xl shadow-glow" data-icon="emoji_events">emoji_events</span>
+<span class="font-headline-md text-headline-md text-on-surface">FINAL PREDICTION</span>
+<div class="flex items-center gap-6 mt-4">
+<span class="font-label-caps text-label-caps text-on-surface border border-secondary px-4 py-2 rounded">BRA</span>
+<span class="font-label-caps text-on-surface-variant">VS</span>
+<span class="font-label-caps text-label-caps text-on-surface border border-white/20 px-4 py-2 rounded">ENG</span>
+</div>
+</div>
+<!-- Fake Bracket Lines Right -->
+<div class="flex flex-col justify-around h-full border-l border-white/20 pl-4">
+<div class="w-16 h-8 border-b border-white/20"></div>
+<div class="w-16 h-8 border-t border-b border-white/20"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Contextual Pane -->
+<div class="lg:col-span-1 flex flex-col gap-8">
+<!-- Notifications Widget -->
+<div class="glass-panel rounded-xl p-6 flex flex-col gap-6 paper-cut-shadow">
+<h3 class="font-headline-md text-headline-md text-on-surface border-b border-white/10 pb-4 m-0">Alerts</h3>
+<div class="flex flex-col gap-4">
+<!-- Alert Item -->
+<div class="flex gap-4 items-start pb-4 border-b border-white/5">
+<div class="w-2 h-2 rounded-full bg-secondary mt-2 shadow-glow flex-shrink-0"></div>
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface leading-tight">Match Starting Soon: BRA vs FRA</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">10 MINS AGO</span>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="flex gap-4 items-start pb-4 border-b border-white/5">
+<div class="w-2 h-2 rounded-full bg-surface-variant mt-2 flex-shrink-0"></div>
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface-variant leading-tight">Prediction Score Updated: +50 pts</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">2 HOURS AGO</span>
+</div>
+</div>
+<!-- Alert Item -->
+<div class="flex gap-4 items-start">
+<div class="w-2 h-2 rounded-full bg-surface-variant mt-2 flex-shrink-0"></div>
+<div class="flex flex-col gap-1">
+<span class="font-body-md text-body-md text-on-surface-variant leading-tight">New Bracket Challenge Available</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">1 DAY AGO</span>
+</div>
+</div>
+</div>
+<button class="w-full py-2 font-label-caps text-label-caps text-on-surface-variant hover:text-white transition-colors mt-2">MARK ALL AS READ</button>
+</div>
+<!-- Quick Stats / Editorial Promo -->
+<div class="relative rounded-xl overflow-hidden min-h-[300px] flex items-end p-6 group cursor-pointer paper-cut-shadow">
+<img alt="Stadium Atmosphere" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, wide-angle shot of a massive, modern football stadium filled with cheering fans at night. The stadium lights pierce through dramatic atmospheric haze. The overall tone is dark and epic, heavily leaning into a premium sports aesthetic with deep shadows and intense, focused highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmbleQnggSMJ9jLOVS_Fy_fvfvmj4ys-tyRZUfkg3zbCd7eY6KN98JQeDTkRfWVNx06qtNZlmmIq0mzuj9QS0sUr3yLFNa96YBt1-9xeF3nrht1d7KUhGgKTDjgEs2yygqKkpGXT0iZPzJ-dXSjq0HBWV3sae1RP_IFmRaC_Mi52lNaiYud5FmJMSG_DjOa25-rPwDG3Dt1ia3-xuGi0SHkHGgNMkbOowlqax5t1Xztz_r6GJQN42t--kdNdSRyJQ49VwelYZ4KxE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/50 to-transparent"></div>
+<div class="relative z-10 flex flex-col gap-2">
+<span class="font-label-caps text-[10px] text-secondary border border-secondary w-fit px-2 py-0.5 rounded shadow-glow">EXCLUSIVE</span>
+<h4 class="font-headline-md text-headline-md text-on-surface leading-tight m-0">Inside the Host Cities</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Explore the venues and plan your ultimate tournament journey.</p>
+<span class="font-label-caps text-label-caps text-on-surface mt-2 flex items-center gap-1 group-hover:text-secondary transition-colors">READ MORE <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest text-on-surface dark:text-on-surface-variant font-body-md text-body-md full-width py-20 border-t border-white/5 flat no shadows w-full px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter z-50 relative mt-auto">
+<div class="flex flex-col gap-4 md:col-span-1">
+<div class="font-headline-md text-headline-md text-secondary">WORLD CUP 26</div>
+<p class="text-on-surface-variant text-sm mt-4">© 2026 FIFA World Cup. All Rights Reserved. Immersive Experience Powered by Living Tournament.</p>
+</div>
+<div class="flex flex-col gap-4 md:col-start-4 items-start md:items-end">
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Tournament Rules</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

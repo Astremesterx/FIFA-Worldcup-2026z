@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>World Cup 26 - Bracket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#5a5e6d",
+                        "surface-dim": "#121414",
+                        "on-surface-variant": "#c7c6cc",
+                        "on-tertiary": "#313030",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#0e0e0e",
+                        "surface-container-lowest": "#0c0f0f",
+                        "primary-fixed": "#dfe2f3",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary": "#3c2f00",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#333535",
+                        "on-secondary-container": "#342800",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface": "#121414",
+                        "secondary-fixed": "#ffe088",
+                        "background": "#121414",
+                        "secondary": "#e9c349",
+                        "primary-container": "#0a0e1a",
+                        "surface-container-highest": "#333535",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-bright": "#37393a",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "outline": "#909096",
+                        "on-tertiary-container": "#7d7b7a",
+                        "on-surface": "#e2e2e2",
+                        "tertiary": "#c9c6c5",
+                        "surface-container": "#1e2020",
+                        "secondary-container": "#af8d11",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-container-high": "#282a2b",
+                        "on-primary-container": "#777b8a",
+                        "on-primary": "#2c303d",
+                        "primary": "#c3c6d7",
+                        "on-secondary-fixed": "#241a00",
+                        "on-secondary-fixed-variant": "#574500",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-low": "#1a1c1c",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#c3c6d7",
+                        "on-primary-fixed-variant": "#434654",
+                        "outline-variant": "#46464c",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#c3c6d7",
+                        "on-primary-fixed": "#171b28"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Bodoni Moda"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-hero": ["Bodoni Moda"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-glow { box-shadow: 0 0 15px rgba(233, 195, 73, 0.4); }
+        .bracket-line-h {
+            position: absolute;
+            height: 1px;
+            background-color: rgba(233, 195, 73, 0.4); /* Gold line */
+            z-index: 0;
+        }
+        .bracket-line-v {
+            position: absolute;
+            width: 1px;
+            background-color: rgba(233, 195, 73, 0.4); /* Gold line */
+            z-index: 0;
+        }
+        
+        .mist-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(10, 14, 26, 0.8) 0%, rgba(12, 15, 15, 1) 100%),
+                        url('https://images.unsplash.com/photo-1518605368461-1ee1893c7885?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased min-h-screen flex flex-col mist-bg">
+<!-- TopAppBar -->
+<header class="bg-surface/40 dark:bg-surface-container-lowest/40 backdrop-blur-xl font-headline-md text-headline-md font-label-caps text-label-caps docked full-width top-0 sticky z-50 border-b border-white/10 dark:border-secondary/20 shadow-2xl flex justify-between items-center px-margin-desktop py-4 w-full">
+<div class="font-headline-lg text-headline-lg tracking-tighter text-secondary dark:text-secondary-fixed shadow-glow">
+            WORLD CUP 26
+        </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Match Center</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Standings</a>
+<a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 font-label-caps text-label-caps" href="#">Bracket</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-caps text-label-caps" href="#">Teams</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-on-surface transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors scale-95 active:scale-90 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-secondary text-on-secondary px-6 py-2 rounded-full font-label-caps text-label-caps hover:backdrop-blur-3xl transition-all duration-300 scale-95 active:scale-90 transition-transform">
+                Tickets
+            </button>
+</div>
+</header>
+<!-- Main Content: Bracket -->
+<main class="flex-grow flex flex-col items-center justify-center py-20 px-margin-desktop relative overflow-hidden">
+<!-- Background decorative elements -->
+<div class="absolute inset-0 pointer-events-none flex justify-center items-center opacity-10">
+<img alt="Background Emblem" class="h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFWvIJKYY5oGyv2J19E2BtV48iB98cfAtzvICSFyEqWLrSQSn6nOxyw60Pu2rphos0m1gDG1AdpwEvngMYbRqPPgx2q0yqDnqpTTqRuj2tMoyKalicsRuPWIHGHOS8ZUVXqiusMhBX0jZ4dOrrUtfx8G7vwCcDwxhdaAJyFQ1FjKs6kWDVEJrEhZzw9R4EZcORNTke-hNLPU-lDtUBTAGtNQQt5Nt7WL03TeDeDinBzZYhUHKFm6NwrRJLPKlel9RrnhsITvGrsM0"/>
+</div>
+<div class="text-center mb-16 relative z-10">
+<h1 class="font-display-hero text-display-hero text-secondary-fixed mb-4">THE PINNACLE</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant tracking-[0.2em]">KNOCKOUT STAGE</p>
+</div>
+<div class="w-full max-w-container-max relative flex justify-between items-stretch min-h-[600px] z-10">
+<!-- Left Side (R16, QF, SF) - Simplified structure for illustration -->
+<div class="flex flex-col justify-around w-1/4 z-10">
+<!-- R16 Node 1 -->
+<div class="bg-surface-container/60 backdrop-blur-xl border border-white/10 rounded-lg p-4 mb-4 relative shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps text-on-surface">BRA</span>
+<span class="font-headline-md text-headline-md text-secondary">2</span>
+</div>
+<div class="flex justify-between items-center opacity-50">
+<span class="font-label-caps text-label-caps text-on-surface">URU</span>
+<span class="font-headline-md text-headline-md text-on-surface">1</span>
+</div>
+<!-- Outgoing Line -->
+<div class="bracket-line-h w-8 right-[-32px] top-1/2"></div>
+</div>
+<!-- R16 Node 2 -->
+<div class="bg-surface-container/60 backdrop-blur-xl border border-white/10 rounded-lg p-4 relative shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps text-on-surface">ARG</span>
+<span class="font-headline-md text-headline-md text-secondary">3</span>
+</div>
+<div class="flex justify-between items-center opacity-50">
+<span class="font-label-caps text-label-caps text-on-surface">COL</span>
+<span class="font-headline-md text-headline-md text-on-surface">0</span>
+</div>
+<!-- Outgoing Line -->
+<div class="bracket-line-h w-8 right-[-32px] top-1/2"></div>
+</div>
+</div>
+<!-- Quarter Final Left -->
+<div class="flex flex-col justify-center w-1/5 pl-8 z-10 relative">
+<div class="bracket-line-v h-[150px] left-0 top-[25%]"></div>
+<div class="bracket-line-h w-8 left-0 top-1/2"></div>
+<div class="bg-surface-container/80 backdrop-blur-xl border border-secondary/30 rounded-lg p-4 relative shadow-[0_4px_30px_rgba(233,195,73,0.1)]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps text-secondary">BRA</span>
+<span class="font-headline-md text-headline-md text-secondary">TBD</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-secondary">ARG</span>
+<span class="font-headline-md text-headline-md text-secondary">TBD</span>
+</div>
+<!-- Outgoing Line to Center -->
+<div class="bracket-line-h w-[100px] right-[-100px] top-1/2"></div>
+</div>
+</div>
+<!-- Center: FINAL -->
+<div class="flex flex-col items-center justify-center w-1/3 relative z-20">
+<div class="relative flex flex-col items-center justify-center p-8 bg-surface-container-lowest/80 backdrop-blur-2xl rounded-2xl border border-secondary/50 shadow-[0_0_50px_rgba(233,195,73,0.2)]">
+<img alt="World Cup Emblem" class="h-64 object-contain mb-8 drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFWvIJKYY5oGyv2J19E2BtV48iB98cfAtzvICSFyEqWLrSQSn6nOxyw60Pu2rphos0m1gDG1AdpwEvngMYbRqPPgx2q0yqDnqpTTqRuj2tMoyKalicsRuPWIHGHOS8ZUVXqiusMhBX0jZ4dOrrUtfx8G7vwCcDwxhdaAJyFQ1FjKs6kWDVEJrEhZzw9R4EZcORNTke-hNLPU-lDtUBTAGtNQQt5Nt7WL03TeDeDinBzZYhUHKFm6NwrRJLPKlel9RrnhsITvGrsM0"/>
+<h2 class="font-headline-lg text-headline-lg text-secondary mb-6 text-center">FINAL</h2>
+<div class="flex items-center gap-8 w-full justify-between">
+<div class="text-center flex-1">
+<span class="font-headline-md text-headline-md text-on-surface block mb-2">TBD</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">VS</span>
+<div class="text-center flex-1">
+<span class="font-headline-md text-headline-md text-on-surface block mb-2">TBD</span>
+</div>
+</div>
+<div class="mt-8 font-label-caps text-label-caps text-secondary text-center tracking-widest border border-secondary/30 px-4 py-2 rounded-full">
+                        JULY 19, 2026
+                    </div>
+</div>
+</div>
+<!-- Quarter Final Right -->
+<div class="flex flex-col justify-center w-1/5 pr-8 z-10 relative">
+<div class="bracket-line-v h-[150px] right-0 top-[25%]"></div>
+<div class="bracket-line-h w-8 right-0 top-1/2"></div>
+<div class="bg-surface-container/80 backdrop-blur-xl border border-secondary/30 rounded-lg p-4 relative shadow-[0_4px_30px_rgba(233,195,73,0.1)]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-caps text-label-caps text-secondary">FRA</span>
+<span class="font-headline-md text-headline-md text-secondary">TBD</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-secondary">ENG</span>
+<span class="font-headline-md text-headline-md text-secondary">TBD</span>
+</div>
+<!-- Outgoing Line to Center -->
+<div class="bracket-line-h w-[100px] left-[-100px] top-1/2"></div>
+</div>
+</div>
+<!-- Right Side (R16) -->
+<div class="flex flex-col justify-around w-1/4 z-10">
+<!-- R16 Node 3 -->
+<div class="bg-surface-container/60 backdrop-blur-xl border border-white/10 rounded-lg p-4 mb-4 relative shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline-md text-headline-md text-secondary">2</span>
+<span class="font-label-caps text-label-caps text-on-surface">FRA</span>
+</div>
+<div class="flex justify-between items-center opacity-50">
+<span class="font-headline-md text-headline-md text-on-surface">0</span>
+<span class="font-label-caps text-label-caps text-on-surface">ESP</span>
+</div>
+<!-- Outgoing Line -->
+<div class="bracket-line-h w-8 left-[-32px] top-1/2"></div>
+</div>
+<!-- R16 Node 4 -->
+<div class="bg-surface-container/60 backdrop-blur-xl border border-white/10 rounded-lg p-4 relative shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline-md text-headline-md text-secondary">1</span>
+<span class="font-label-caps text-label-caps text-on-surface">ENG</span>
+</div>
+<div class="flex justify-between items-center opacity-50">
+<span class="font-headline-md text-headline-md text-on-surface">0</span>
+<span class="font-label-caps text-label-caps text-on-surface">GER</span>
+</div>
+<!-- Outgoing Line -->
+<div class="bracket-line-h w-8 left-[-32px] top-1/2"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest full-width py-20 border-t border-white/5 w-full px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter font-body-md text-body-md text-on-surface dark:text-on-surface-variant">
+<div class="md:col-span-1">
+<h3 class="font-headline-md text-headline-md text-secondary mb-4">WORLD CUP 26</h3>
+<p class="text-on-surface-variant text-sm">© 2026 FIFA World Cup. All Rights Reserved. Immersive Experience Powered by Living Tournament.</p>
+</div>
+<div class="md:col-span-3 flex justify-end gap-8 items-center">
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Tournament Rules</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+</body></html>

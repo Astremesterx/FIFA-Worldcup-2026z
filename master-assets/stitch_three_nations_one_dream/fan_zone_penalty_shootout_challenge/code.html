@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Penalty Shootout - FIFA World Cup 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c3c6d7",
+                        "on-primary": "#2c303d",
+                        "primary-fixed": "#dfe2f3",
+                        "tertiary-container": "#0e0e0e",
+                        "on-tertiary-container": "#7d7b7a",
+                        "secondary": "#e9c349",
+                        "surface-bright": "#37393a",
+                        "on-surface-variant": "#c7c6cc",
+                        "tertiary": "#c9c6c5",
+                        "background": "#121414",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-secondary": "#3c2f00",
+                        "on-error": "#690005",
+                        "surface-variant": "#333535",
+                        "surface-container-low": "#1a1c1c",
+                        "outline": "#909096",
+                        "primary": "#c3c6d7",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e2",
+                        "surface": "#121414",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-container": "#342800",
+                        "secondary-fixed-dim": "#e9c349",
+                        "secondary-fixed": "#ffe088",
+                        "primary-container": "#0a0e1a",
+                        "on-primary-fixed": "#171b28",
+                        "outline-variant": "#46464c",
+                        "on-primary-fixed-variant": "#434654",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-primary": "#5a5e6d",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-surface": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "surface-container-high": "#282a2b",
+                        "secondary-container": "#af8d11",
+                        "on-tertiary": "#313030",
+                        "on-primary-container": "#777b8a",
+                        "primary-fixed-dim": "#c3c6d7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-hero": ["Bodoni Moda"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-gold {
+            text-shadow: 0 0 10px rgba(233, 195, 73, 0.5);
+        }
+        .clip-power {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        @keyframes sweep {
+            0% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-sweep {
+            animation: sweep 2s infinite linear;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen relative overflow-hidden font-body-md select-none">
+<!-- Top Navigation Bar (Web) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-surface/40 backdrop-blur-xl border-b border-secondary/20 shadow-xl transition-all duration-300">
+<div class="font-headline-lg text-headline-lg text-secondary uppercase tracking-tighter">
+            FIFA World Cup 2026
+        </div>
+<div class="flex items-center space-x-8 font-label-caps text-label-caps">
+<a class="text-secondary border-b-2 border-secondary pb-1 font-bold active:scale-95 transition-transform" href="#">Fan Zone</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 duration-300 px-2 py-1 rounded" href="#">Tickets</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 duration-300 px-2 py-1 rounded" href="#">Teams</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 duration-300 px-2 py-1 rounded" href="#">News</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-secondary hover:bg-white/5 transition-all duration-300 p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Main Game Canvas -->
+<main class="relative w-full h-screen">
+<!-- Cinematic Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Blurred football stadium at night under dramatic floodlights." class="w-full h-full object-cover opacity-80 mix-blend-luminosity brightness-75" data-alt="A highly cinematic first-person perspective from the penalty spot inside a massive, packed football stadium at night. The scene is illuminated by dramatic, high-contrast floodlights cutting through the dark navy sky. The foreground features a realistic, textured soccer ball resting on the grass. In the middle distance, a highly detailed goalkeeper stands ready in the goal mouth, bathed in spotlight, with deep shadows emphasizing tension. The distant crowd is rendered as a beautiful, glowing bokeh blur of deep blacks, pristine whites, and vibrant team colors, creating a premium sports cinematic aesthetic with Z-axis depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4pZWfXO07uvFg_Hhv_WtP5tRf1uifzB1uRxjHPDU4VhsslTyCe5sAV4rlqbHDR5DsqNeE77eaXpoqkTSt-oXNLc860tl1TBORbSCwlyOlNz31iRP6FxcheU8O76jjRLLiseO1aPBiSwzAjbVysqyczpnXH9AdxfKyRDZAmFaovgzB_qJU2lP0bSQ60QRtGQmox_oZsOvCzrMGLwbYQe7b-Eru35VkjmcJWytmmu_cOPPIQXYwEk2uiVPB9FNfQ94WhT-wBUpmhz4"/>
+<!-- Midnight Black gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50"></div>
+</div>
+<!-- UI Overlay Layer (Level 2) -->
+<div class="relative z-10 w-full h-full flex flex-col justify-between items-center pt-24 pb-32 px-margin-mobile md:px-margin-desktop">
+<!-- Top HUD: Score & Status -->
+<div class="w-full flex justify-between items-start max-w-4xl mx-auto">
+<!-- Score Card -->
+<div class="flex flex-col items-center bg-surface-container/60 backdrop-blur-[20px] border border-white/20 rounded-xl p-4 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase tracking-widest">Score</span>
+<span class="font-headline-lg text-headline-lg text-secondary text-shadow-gold">2 - 1</span>
+</div>
+<!-- Attempt Status -->
+<div class="flex space-x-2">
+<div class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_#e9c349]"></div>
+<div class="w-3 h-3 rounded-full bg-secondary shadow-[0_0_8px_#e9c349]"></div>
+<div class="w-3 h-3 rounded-full border border-white/40"></div>
+<div class="w-3 h-3 rounded-full border border-white/40"></div>
+<div class="w-3 h-3 rounded-full border border-white/40"></div>
+</div>
+</div>
+<!-- Central Aiming Reticle -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center pointer-events-none">
+<div class="w-16 h-16 border-2 border-secondary/50 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-2 h-2 bg-secondary rounded-full shadow-[0_0_10px_#e9c349]"></div>
+</div>
+</div>
+<!-- Bottom Interaction Zone -->
+<div class="w-full max-w-md mx-auto flex flex-col items-center space-y-8">
+<!-- Power Meter -->
+<div class="w-full space-y-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>Power</span>
+<span class="text-secondary">75%</span>
+</div>
+<div class="h-4 w-full bg-surface-container-low rounded-full overflow-hidden border border-white/10 relative">
+<!-- Moving Indicator -->
+<div class="absolute top-0 bottom-0 w-4 bg-white/50 z-10 animate-sweep mix-blend-overlay"></div>
+<!-- Current Power Fill -->
+<div class="h-full bg-gradient-to-r from-secondary/40 via-secondary to-error-container rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="text-center">
+<h2 class="font-headline-md text-headline-md text-secondary text-shadow-gold mb-2">Swipe to Kick</h2>
+<div class="flex flex-col items-center opacity-70 animate-bounce">
+<span class="material-symbols-outlined text-white text-3xl">swipe_up</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-lg z-50 flex justify-around items-center px-6 py-2 bg-primary-container/40 backdrop-blur-xl border-t border-secondary/30 rounded-full shadow-[0_-8px_30px_rgb(0,0,0,0.12)]">
+<a class="flex flex-col items-center justify-center bg-secondary/10 text-secondary rounded-full p-3 scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">sports_soccer</span>
+<span class="font-label-caps text-label-caps mt-1 text-[10px]">Games</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-label-caps text-label-caps mt-1 text-[10px]">Predict</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined">stars</span>
+<span class="font-label-caps text-label-caps mt-1 text-[10px]">Fan Zone</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-caps text-label-caps mt-1 text-[10px]">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-label-caps text-label-caps mt-1 text-[10px]">Leaderboard</span>
+</a>
+</nav>
+<script>
+        // Simple script to handle touch/swipe interaction simulation for visual feedback
+        let startY = 0;
+        let mainCanvas = document.querySelector('main');
+        
+        mainCanvas.addEventListener('touchstart', (e) => {
+            startY = e.touches[0].clientY;
+        });
+
+        mainCanvas.addEventListener('touchend', (e) => {
+            let endY = e.changedTouches[0].clientY;
+            if (startY - endY > 50) {
+                // Swipe up detected - animate a visual feedback (placeholder for actual game logic)
+                const aim = document.querySelector('.animate-pulse');
+                if(aim) {
+                    aim.classList.add('scale-150', 'opacity-0', 'transition-all', 'duration-500');
+                    setTimeout(() => {
+                        aim.classList.remove('scale-150', 'opacity-0');
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+</body></html>

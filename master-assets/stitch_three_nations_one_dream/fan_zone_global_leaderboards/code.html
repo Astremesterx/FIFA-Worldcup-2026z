@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Leaderboard | FIFA World Cup 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#c3c6d7",
+                        "on-primary": "#2c303d",
+                        "primary-fixed": "#dfe2f3",
+                        "tertiary-container": "#0e0e0e",
+                        "on-tertiary-container": "#7d7b7a",
+                        "secondary": "#e9c349",
+                        "surface-bright": "#37393a",
+                        "on-surface-variant": "#c7c6cc",
+                        "tertiary": "#c9c6c5",
+                        "background": "#121414",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-secondary": "#3c2f00",
+                        "on-error": "#690005",
+                        "surface-variant": "#333535",
+                        "surface-container-low": "#1a1c1c",
+                        "outline": "#909096",
+                        "primary": "#c3c6d7",
+                        "error-container": "#93000a",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-background": "#e2e2e2",
+                        "surface": "#121414",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-container": "#342800",
+                        "secondary-fixed-dim": "#e9c349",
+                        "secondary-fixed": "#ffe088",
+                        "primary-container": "#0a0e1a",
+                        "on-primary-fixed": "#171b28",
+                        "outline-variant": "#46464c",
+                        "on-primary-fixed-variant": "#434654",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-surface": "#e2e2e2",
+                        "inverse-primary": "#5a5e6d",
+                        "on-secondary-fixed": "#241a00",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-surface": "#e2e2e2",
+                        "surface-container": "#1e2020",
+                        "surface-container-high": "#282a2b",
+                        "secondary-container": "#af8d11",
+                        "on-tertiary": "#313030",
+                        "on-primary-container": "#777b8a",
+                        "primary-fixed-dim": "#c3c6d7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-hero": ["Bodoni Moda"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Bodoni Moda"],
+                        "headline-lg": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                        "display-hero": ["84px", {"lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(30, 32, 32, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(233, 195, 73, 0.2);
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(233, 195, 73, 0.3);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #ffe088 0%, #e9c349 50%, #af8d11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .bg-stadium-subtle {
+            background-image: radial-gradient(circle at 50% 0%, rgba(233, 195, 73, 0.05) 0%, transparent 70%),
+                              linear-gradient(to bottom, transparent 0%, theme('colors.background') 100%);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-24 md:pb-0 bg-stadium-subtle relative">
+<!-- Atmospheric Background Image -->
+<div class="fixed inset-0 z-[-1] opacity-20 pointer-events-none" data-alt="A dramatic, cinematic wide shot of a massive, modern soccer stadium at night. Deep, rich navy skies contrast with blindingly bright, high-intensity stadium floodlights piercing through the mist. The atmosphere is dense and electric, hinting at a monumental sporting event. The scene uses a premium, dark aesthetic with profound shadows and subtle gold ambient reflections, emphasizing prestige and global scale." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbL1c4KZXII9QgVXaQHtD9L0Mk7N7lcQ5xlbWZo5Ur_FDb8deckIVb4SAWyTW9GzH3g954Lc1IkDs3pNMabXw38alN7XdX2jYNuKXI2yMJ3SrpQ5Kz_kdPCBJbG_U9Sxu1BROZ6JbbXPFfRsHM5MT4ErLWvSAZT3QtTUPawt0WbDGhKGL3XKvX1aFREYvQpxJCXpraQ_lmzGRjY5uuujU7n53qlzrU2nUSUaKioRYYXvMfANHLl3CNBHdUjIOcxgHQaUW-9lRSnzg'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+</div>
+<!-- Top Navigation (Web) -->
+<header class="hidden md:flex fixed top-0 w-full z-50 justify-between items-center px-margin-desktop py-4 bg-surface/40 backdrop-blur-xl border-b border-secondary/20 shadow-xl">
+<div class="font-headline-lg text-secondary uppercase tracking-tighter">
+            FIFA World Cup 2026
+        </div>
+<nav class="flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-4 rounded active:scale-95 transition-transform" href="#">Fan Zone</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-4 rounded active:scale-95 transition-transform" href="#">Tickets</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-4 rounded active:scale-95 transition-transform" href="#">Teams</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors hover:bg-white/5 transition-all duration-300 py-2 px-4 rounded active:scale-95 transition-transform" href="#">News</a>
+</nav>
+<div class="flex items-center">
+<button aria-label="Account" class="text-secondary hover:bg-white/5 p-2 rounded-full transition-all duration-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 28px;">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-8 md:pt-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="mb-12 text-center relative z-10">
+<h1 class="font-display-hero text-display-hero text-gradient-gold mb-4">GLOBAL RANKINGS</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                The pinnacle of fan engagement. Compete globally across predictions, trivia, and overall dedication to claim your spot in World Cup history.
+            </p>
+</div>
+<!-- Category Tabs -->
+<div class="flex justify-center gap-4 mb-16 overflow-x-auto pb-4 scrollbar-hide">
+<button class="font-label-caps text-label-caps px-6 py-3 rounded-full bg-secondary text-on-secondary shadow-[0_0_15px_rgba(233,195,73,0.4)] transition-all">
+                OVERALL POINTS
+            </button>
+<button class="font-label-caps text-label-caps px-6 py-3 rounded-full glass-panel text-on-surface hover:text-secondary hover:border-secondary transition-all">
+                PREDICTION KINGS
+            </button>
+<button class="font-label-caps text-label-caps px-6 py-3 rounded-full glass-panel text-on-surface hover:text-secondary hover:border-secondary transition-all">
+                TRIVIA TITANS
+            </button>
+</div>
+<!-- Podium Section (Top 3) -->
+<div class="relative flex justify-center items-end h-[400px] mb-24 z-10 px-4">
+<!-- Rank 2 -->
+<div class="flex flex-col items-center translate-y-12 z-20 mx-[-20px] md:mx-8">
+<div class="relative mb-4">
+<div class="w-24 h-24 rounded-full border-4 border-tertiary overflow-hidden shadow-[0_0_20px_rgba(201,198,197,0.3)] bg-surface-container">
+<img alt="Rank 2 Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a young woman with dark hair, looking intensely at the camera. The lighting is dramatic, high-contrast, moody studio lighting with deep shadows. The background is pure darkness, isolating the subject perfectly. The overall aesthetic is premium, cinematic, and sharply focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApd7fB9vsjmDXUpBe4kffQtcsZE_d7lP5xC0EOE-xR-TVT7XBaU7OqRee6DEEkYWk-hy5AsxWqiTrO5UW7H9JF5i8oLMknHbBLrBIr2TTBVpMHC3T3ZLOyAw5U2Fwb5UplMOK32xylfDp2AgD33w2pdBXSTrCWZHQm9IC3WuOpm4qtjqywrE201TsWzP75tV8WUDw4E9qrH1Tk3pDGYrgyqT4rHRxee9sXkhJ8WgQ7HJ_jH4t9IcZ_zC-yJPDIBQyXF9t3jj0G1Mg"/>
+</div>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-tertiary flex items-center justify-center font-headline-md text-[16px] text-on-tertiary font-bold shadow-lg">2</div>
+</div>
+<div class="glass-panel p-4 rounded-xl text-center w-32 backdrop-blur-md border-t-tertiary">
+<h3 class="font-body-md text-body-md text-on-surface font-bold truncate">Elena R.</h3>
+<p class="font-label-caps text-[10px] text-secondary mt-1">12,450 PTS</p>
+<p class="font-label-caps text-[8px] text-on-surface-variant mt-1">BRAZIL</p>
+</div>
+</div>
+<!-- Rank 1 -->
+<div class="flex flex-col items-center z-30">
+<div class="absolute -top-16 opacity-50 pointer-events-none">
+<span class="material-symbols-outlined text-secondary" style="font-size: 120px; font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="relative mb-6">
+<div class="w-36 h-36 rounded-full border-4 border-secondary overflow-hidden gold-glow bg-surface-container">
+<img alt="Rank 1 Avatar" class="w-full h-full object-cover" data-alt="Striking portrait of a rugged man with a short beard, gazing directly into the lens. The shot utilizes stark, chiaroscuro lighting, bathing half his face in shadow while highlighting sharp features. The mood is triumphant yet serious, set against a completely black backdrop. High-end, editorial photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiE9HENIkVtsjLP3EP9ZQ79RLPPO_mJ_viSZNv6nc7Qww255Qi4i3BWMC6VUhS6ybKA5Ac9XxANQQrsK36TM5OmC0nekv38-J3EbG4BbCDKh91CtCNkfRh5Rl5bEPQzKTIb8-ukjtf5P3hUf6JVtuOCqZPTLnfYrPIJBsXcFqqhZyy_-HBmSWoG-GOT8zcbcOQUwIiigNEXIX7QzqO4u9Y89BAK5aOJgVKlbmS3litSrKE2LbZXWRyKvmbt22AqAR96c3JiJUJ6fk"/>
+</div>
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-secondary flex items-center justify-center font-headline-md text-[20px] text-on-secondary font-bold shadow-[0_4px_10px_rgba(233,195,73,0.5)]">1</div>
+</div>
+<div class="glass-panel p-6 rounded-xl text-center w-40 backdrop-blur-xl border-t-secondary border-t-2 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+<h3 class="font-body-md text-[20px] text-on-surface font-bold truncate">Marcus T.</h3>
+<p class="font-label-caps text-[12px] text-secondary mt-1 font-bold">15,890 PTS</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant mt-1">GERMANY</p>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="flex flex-col items-center translate-y-16 z-20 mx-[-20px] md:mx-8">
+<div class="relative mb-4">
+<div class="w-20 h-20 rounded-full border-4 border-[#cd7f32] overflow-hidden shadow-[0_0_15px_rgba(205,127,50,0.3)] bg-surface-container">
+<img alt="Rank 3 Avatar" class="w-full h-full object-cover" data-alt="Portrait of a youthful person looking off-camera with a confident expression. Cinematic rim lighting catches the edge of their profile against a pitch-black background. Deep contrast and high resolution give the image a tactile, magazine-cover quality. The lighting subtly hints at gold tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDF1JZpnYTz783qz4SCguoxTR7yljTDsTcasZk6Xk2fHDcCR-RWZFzRHZCnnDSlbpoBCrlHtC5LCTEqSkxm0JCerdG4ZNlvPP8CKlLJSMWHZG5j4hXi0NRcvPtMQpnVp5SPBKzdmNqVo8wrTyL_I1cPUd6HM5aLAZ2mB0l7r_O-Z6OMXMaC-h4PPz9IKBqxxyjxHHjjS4wUKW2n9b_faVYn0AX4BtOvXpwJzMhINPdVOQfbJDxbFAFZQmVUb9Bed3xMRPzWntUr1Zw"/>
+</div>
+<div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#cd7f32] flex items-center justify-center font-headline-md text-[14px] text-white font-bold shadow-lg">3</div>
+</div>
+<div class="glass-panel p-3 rounded-xl text-center w-28 backdrop-blur-md border-t-[#cd7f32]">
+<h3 class="font-body-md text-[14px] text-on-surface font-bold truncate">Aisha K.</h3>
+<p class="font-label-caps text-[10px] text-secondary mt-1">11,200 PTS</p>
+<p class="font-label-caps text-[8px] text-on-surface-variant mt-1">SENEGAL</p>
+</div>
+</div>
+</div>
+<!-- List Section -->
+<div class="max-w-4xl mx-auto glass-panel rounded-2xl overflow-hidden mb-12">
+<div class="flex items-center px-6 py-4 border-b border-surface-variant text-on-surface-variant font-label-caps text-label-caps">
+<div class="w-16 text-center">RANK</div>
+<div class="flex-1 pl-4">FAN</div>
+<div class="w-32 text-right hidden sm:block">COUNTRY</div>
+<div class="w-32 text-right">SCORE</div>
+</div>
+<!-- List Items -->
+<div class="flex flex-col">
+<!-- Item 4 -->
+<div class="flex items-center px-6 py-4 border-b border-surface-variant/50 hover:bg-white/5 transition-colors group">
+<div class="w-16 text-center font-headline-md text-[20px] text-on-surface-variant group-hover:text-secondary transition-colors">4</div>
+<div class="flex-1 pl-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Small avatar portrait of a smiling man. Dark moody lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdVWR8DyW98fmEGUGfG2Yvfg7jKebCdarTsZw-u_gb8YhXYtjbDbf9Vf_ApRwUnJM2STCUId0eSLDVrlv5O7dCe4DblIKjjOrui0ghNNKBLGYLnrHUw-X5FHsFnLhjwOc6LKPWARb7-kvSdhxoffx5oXyB0YVMPEDJSNBmzU_iR4z_UPAKWl0WmXfaxJEoLEPmhB1rLCamMIqgQBqmYAY8o_7l5nipUGgTQU9HA6jGsC6Jo3wy0An_vezXxnfAIXGkEVxsUCLAm6o"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-bold">David W.</span>
+</div>
+<div class="w-32 text-right hidden sm:block font-label-caps text-label-caps text-on-surface-variant">USA</div>
+<div class="w-32 text-right font-label-caps text-label-caps text-secondary font-bold">10,850</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center px-6 py-4 border-b border-surface-variant/50 hover:bg-white/5 transition-colors group">
+<div class="w-16 text-center font-headline-md text-[20px] text-on-surface-variant group-hover:text-secondary transition-colors">5</div>
+<div class="flex-1 pl-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="Small avatar portrait of a woman. Dark moody lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7iC9iRiGePB2r32rtsouu2Gexh6EKLp_xguA3n3XgPpKUInxm0ffTkPfBwgNfUTEfgFqw-mdVg1SGCqE0InqWQq0a8mdzLj4HCRtT1U3IJ5KRv8Tmzbb1ROeUwJn3Qq6d2zXAKl-oKFu0wP1uGh1jt10Jbs60dzrx_AqCHGtxjKsA7ABRTOBvcjRnYbu5zUf2iXYYoD0MqE9ZG_5lh6R8-Lm1De7Yny8d09tyPD6LjjBdr4IY3pHPgUXiJe_z7ZIoX9ZScM6JyMA"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-bold">Sofia M.</span>
+</div>
+<div class="w-32 text-right hidden sm:block font-label-caps text-label-caps text-on-surface-variant">ARGENTINA</div>
+<div class="w-32 text-right font-label-caps text-label-caps text-secondary font-bold">10,210</div>
+</div>
+<!-- Item 6 -->
+<div class="flex items-center px-6 py-4 border-b border-surface-variant/50 hover:bg-white/5 transition-colors group">
+<div class="w-16 text-center font-headline-md text-[20px] text-on-surface-variant group-hover:text-secondary transition-colors">6</div>
+<div class="flex-1 pl-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden text-center flex items-center justify-center bg-surface-variant text-on-surface">
+                            J
+                        </div>
+<span class="font-body-md text-body-md text-on-surface font-bold">Julian B.</span>
+</div>
+<div class="w-32 text-right hidden sm:block font-label-caps text-label-caps text-on-surface-variant">FRANCE</div>
+<div class="w-32 text-right font-label-caps text-label-caps text-secondary font-bold">9,950</div>
+</div>
+<!-- Item 7 -->
+<div class="flex items-center px-6 py-4 hover:bg-white/5 transition-colors group">
+<div class="w-16 text-center font-headline-md text-[20px] text-on-surface-variant group-hover:text-secondary transition-colors">7</div>
+<div class="flex-1 pl-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden text-center flex items-center justify-center bg-surface-variant text-on-surface">
+                            M
+                        </div>
+<span class="font-body-md text-body-md text-on-surface font-bold">Maria G.</span>
+</div>
+<div class="w-32 text-right hidden sm:block font-label-caps text-label-caps text-on-surface-variant">SPAIN</div>
+<div class="w-32 text-right font-label-caps text-label-caps text-secondary font-bold">9,800</div>
+</div>
+</div>
+<div class="p-4 border-t border-surface-variant text-center">
+<button class="font-label-caps text-label-caps text-secondary hover:text-white transition-colors uppercase tracking-widest flex items-center justify-center w-full gap-2">
+                     Load More <span class="material-symbols-outlined" style="font-size: 16px;">expand_more</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-full max-w-lg z-50 flex justify-around items-center px-6 py-2 bg-primary-container/40 backdrop-blur-xl rounded-full shadow-[0_-8px_30px_rgb(0,0,0,0.12)] border-t border-secondary/30 w-[90%] mx-auto">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined mb-1">sports_soccer</span>
+<span class="font-label-caps text-[10px]">Games</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined mb-1">query_stats</span>
+<span class="font-label-caps text-[10px]">Predict</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined mb-1">stars</span>
+<span class="font-label-caps text-[10px]">Fan Zone</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-secondary transition-all" href="#">
+<span class="material-symbols-outlined mb-1">forum</span>
+<span class="font-label-caps text-[10px]">Social</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary/10 text-secondary rounded-full p-3 scale-110 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">leaderboard</span>
+<span class="font-label-caps text-[10px] font-bold">Leaderboard</span>
+</a>
+</nav>
+</body></html>

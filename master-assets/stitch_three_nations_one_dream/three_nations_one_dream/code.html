@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Three Nations. One Dream. - Host Nations 2026</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<!-- Tailwind CSS Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#e9c349",
+                        "on-tertiary": "#313030",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-high": "#282a2b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container": "#1e2020",
+                        "on-secondary-container": "#342800",
+                        "primary-container": "#0a0e1a",
+                        "surface-container-low": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "inverse-primary": "#5a5e6d",
+                        "surface": "#121414",
+                        "secondary-container": "#af8d11",
+                        "on-secondary": "#3c2f00",
+                        "on-background": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-primary": "#2c303d",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface-variant": "#c7c6cc",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-primary-fixed-variant": "#434654",
+                        "on-primary-fixed": "#171b28",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "background": "#121414",
+                        "on-tertiary-container": "#7d7b7a",
+                        "on-secondary-fixed": "#241a00",
+                        "outline": "#909096",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-variant": "#333535",
+                        "surface-bright": "#37393a",
+                        "tertiary": "#c9c6c5",
+                        "surface-container-highest": "#333535",
+                        "surface-dim": "#121414",
+                        "primary-fixed": "#dfe2f3",
+                        "primary": "#c3c6d7",
+                        "surface-tint": "#c3c6d7",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#777b8a",
+                        "outline-variant": "#46464c",
+                        "on-surface": "#e2e2e2",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#c3c6d7",
+                        "tertiary-container": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-hero": ["Bodoni Moda"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- TopAppBar (Web Only) -->
+<nav class="hidden md:flex justify-between items-center px-margin-desktop py-4 w-full bg-surface/40 dark:bg-surface-container-lowest/40 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-2xl transition-all duration-300">
+<div class="flex items-center gap-8">
+<div class="font-headline-lg text-headline-lg tracking-tighter text-secondary dark:text-secondary-fixed shadow-glow">WORLD CUP 26</div>
+<div class="flex gap-6">
+<!-- Assuming no direct match for purely editorial page, rendering all inactive except maybe Match Center conceptually -->
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Match Center</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Standings</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Bracket</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors" href="#">Teams</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="font-label-caps text-label-caps bg-secondary text-on-secondary px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(233,195,73,0.4)] transition-all scale-95 active:scale-90">Tickets</button>
+<div class="flex gap-4 text-primary dark:text-primary-fixed-dim">
+<button class="scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">language</span></button>
+<button class="scale-95 active:scale-90 transition-transform"><span class="material-symbols-outlined">notifications</span></button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="w-full relative z-10 pb-32 md:pb-16">
+<!-- Hero Section: Premium Cinematic -->
+<section class="relative w-full h-[819px] min-h-[600px] flex items-center justify-center overflow-hidden border-b border-white/5">
+<div class="absolute inset-0 bg-surface-lowest">
+<img alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity" data-alt="A massive, cinematic wide shot of a futuristic stadium at night, completely packed with cheering fans under dramatic volumetric lighting. The scene is rendered in deep blacks and shadowy mid-tones with intense, shimmering gold and vibrant color accents cutting through the darkness. The atmosphere is electric, prestigious, and highly dramatic, fitting a global championship event." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmh0E_ucEZaCOlD-KDWDazFlmK2pvPs-zry7xkCpctD9--522diDrPFZGkjgljX2VFEXjhupTnVkW6n1xmL3_cSWC-nzoSaX631v2-GWtdvYsqAHAyemeb0pa8r4LpLNWyND_pUv54PegZT1bk4IWp6I_7n0BDmBaLzqnMBzU_qJfChnaSZlNSVXdshwa6gQBTvuytCxf-uRsSrrYEFr6RsLn6iP1_IEY_terPDj4BlcZ0-3mbD5GyJ_2000IADeq5wN1nYzhUzXI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent"></div>
+</div>
+<div class="relative z-20 text-center px-margin-mobile md:px-margin-desktop max-w-[1000px]">
+<span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] uppercase mb-4 block">The Host Nations</span>
+<h1 class="font-display-hero text-display-hero text-on-surface drop-shadow-2xl mb-6">
+                    Three Nations.<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-secondary-container">One Dream.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Experience the unprecedented scale and unparalleled passion as the United States, Canada, and Mexico unite to host the largest sporting spectacle on earth. A continent divided by borders, united by the beautiful game.
+                </p>
+</div>
+</section>
+<!-- Bento Grid: The Nations -->
+<section class="px-margin-mobile md:px-margin-desktop py-24 max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- USA Card -->
+<div class="group relative h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-2">
+<img alt="USA Stadium" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500" data-alt="A dramatic low-angle shot of a colossal modern stadium in the United States, illuminated by brilliant gold and white floodlights against a pitch-black night sky. The architecture features sleek lines and massive scale. Deep shadows contrast with bright highlights, creating a premium, high-stakes cinematic sports aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIz-0zFuscYqlBMkSxfCFmGBRiZEomoaSCjlvO66UpZkCe3fDhdpGO0Eh8NWp1NVr1k5KWGnET8peL-o3TdVxnKvDKBV6yb-edgLwX0hUEfO6ll-Hy95IqdZwYsbiMlqzUMkrY7acNAU8FVnZriCE7kXcrTs45W0ZYVyHzZ8qT5vwdA_DcvEVtS4oU83VMWahic0W1HpkoFVZ9GiX3__284UyNpWlEnz06q2WZ8Ja3BvKAWe-g1VlLwvbScRNDt9pZUk3O8ukgdbs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full backdrop-blur-md bg-surface-container-lowest/30 border-t border-white/10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-2">USA</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">11 Host Cities • The heart of the spectacle, featuring massive modern coliseums and a rich legacy of global events.</p>
+</div>
+</div>
+<!-- Mexico Card -->
+<div class="group relative h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-2">
+<img alt="Mexico Stadium" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500" data-alt="An atmospheric, cinematic photograph of a historic, iconic soccer stadium in Mexico, pulsing with the energy of a night match. The stands are shrouded in deep, dramatic shadows, while the pitch is bathed in intense, glowing light. Gold architectural accents and flares add a sense of raw passion and deep-rooted football heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4F8beJkDGP-6wWOamOm_fxWRibTlIcYFGKLWaihxpegUFJSy-QuRm2yNfltws4c59eagCx6DfNaUtVrlMuJem04dZM1itlCTckM8PPDdsk17nwI2QV9tX7EwTHZJcYyv-hqvJdVoavyckBbeyu5fXhPo94wTkrRU9Z26ZyW1oYiUOy1IQ-7IOMGlS0vSV4iorrLA8P5aVMzC0vodIOUV-nvzcSpyBZv5_K5xKoZ-Z8eiKFWEUV7r2jmwDPktaMM0cbCgdjMXNWzA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full backdrop-blur-md bg-surface-container-lowest/30 border-t border-white/10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-2">Mexico</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">3 Host Cities • The soul of the tournament. Historic grounds where legends are born and football is religion.</p>
+</div>
+</div>
+<!-- Canada Card -->
+<div class="group relative h-[500px] rounded-xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all hover:-translate-y-2 md:translate-y-12">
+<img alt="Canada Stadium" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-500" data-alt="A striking, modern architectural photograph of a stadium in Canada, framed against a dramatic, moody twilight sky. The image emphasizes sleek, contemporary design with sharp metallic lines and glowing gold accents reflecting off glass surfaces. The scene conveys a sense of pristine new-world prestige within a deep, dark cinematic environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRC36DRCxzcVlZwokGIGOstGREly2zvtX3fCS5dVoQuKGiNmHufbHCJTZhUB-Sc0U6R51Mbht6CtAOwdaTVRF2L2ATXMwsrDd923IY3T8t5uBnXteiDz7zeZo4-h3XIaJqBFn60GREjgs9ZWbMabAdi74fNMTiiD5QYJ_aqx_JhkVrpUbVfbt1cXMNcYlXwMGeQ8jR3-_7-cZp7dK_A2R3h2H9Z3zYTvovHWshWhqq8SB0YUZ7gCdQObrRiRj6o-nWTs4oeZ2lTqU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full backdrop-blur-md bg-surface-container-lowest/30 border-t border-white/10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-2">Canada</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">2 Host Cities • The new frontier. Blending stunning natural backdrops with state-of-the-art urban arenas.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 w-fit min-w-[320px] sm:min-w-[400px] bg-surface-container-low/60 dark:bg-surface-container-lowest/80 backdrop-blur-2xl rounded-full border border-white/20 z-50 flex justify-center items-center px-4 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] gap-2">
+<a class="flex flex-col items-center justify-center bg-secondary text-on-secondary rounded-full p-3 shadow-[0_0_15px_rgba(233,195,73,0.4)] scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined icon-fill">home</span>
+<span class="font-label-caps text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-label-caps text-[10px] mt-1 hidden sm:block">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-caps text-[10px] mt-1 hidden sm:block">Bracket</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+<span class="font-label-caps text-[10px] mt-1 hidden sm:block">Gallery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-caps text-[10px] mt-1 hidden sm:block">Fans</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-20 bg-surface-container-highest dark:bg-surface-container-lowest border-t border-white/5 grid grid-cols-1 md:grid-cols-4 gap-gutter z-20 relative">
+<div class="col-span-1 md:col-span-4 mb-8">
+<span class="font-headline-md text-headline-md text-secondary">WORLD CUP 26</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-colors" href="#">Tournament Rules</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-white transition-colors" href="#">Contact Us</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-8">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">© 2026 FIFA World Cup. All Rights Reserved. Immersive Experience Powered by Living Tournament.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html, body {
+    @apply bg-background text-on-background font-body-lg antialiased selection:bg-secondary selection:text-on-secondary;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+}
+
+@layer utilities {
+  .paper-cut-shadow {
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.7)) drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(233, 195, 73, 0.3);
+  }
+  .canvas-bg {
+    background: radial-gradient(circle at 50% 50%, #0a0e1a 0%, #04060b 100%);
+  }
+  .spotlight {
+    background: radial-gradient(circle at 50% 30%, rgba(233, 195, 73, 0.15) 0%, rgba(10, 14, 26, 0.8) 70%, transparent 100%);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(233, 195, 73, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glass-card:hover {
+    border-color: rgba(233, 195, 73, 0.6);
+    box-shadow: 0 0 30px rgba(233, 195, 73, 0.15);
+    transform: translateY(-8px);
+  }
+  .flag-bg {
+    filter: grayscale(40%) contrast(1.1) brightness(0.6);
+    transition: filter 0.5s ease;
+  }
+  .glass-card:hover .flag-bg {
+    filter: grayscale(10%) contrast(1.2) brightness(0.8);
+  }
+}

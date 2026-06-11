@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>World Cup 26 - Timeline &amp; Teams</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&amp;family=Hanken+Grotesk:wght@400..900&amp;family=JetBrains+Mono:wght@400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#e9c349",
+                        "on-tertiary": "#313030",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-high": "#282a2b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container": "#1e2020",
+                        "on-secondary-container": "#342800",
+                        "primary-container": "#0a0e1a",
+                        "surface-container-low": "#1a1c1c",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "inverse-primary": "#5a5e6d",
+                        "surface": "#121414",
+                        "secondary-container": "#af8d11",
+                        "on-secondary": "#3c2f00",
+                        "on-background": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container-lowest": "#0c0f0f",
+                        "on-primary": "#2c303d",
+                        "inverse-surface": "#e2e2e2",
+                        "on-surface-variant": "#c7c6cc",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-primary-fixed-variant": "#434654",
+                        "on-primary-fixed": "#171b28",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "background": "#121414",
+                        "on-tertiary-container": "#7d7b7a",
+                        "on-secondary-fixed": "#241a00",
+                        "outline": "#909096",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-variant": "#333535",
+                        "surface-bright": "#37393a",
+                        "tertiary": "#c9c6c5",
+                        "surface-container-highest": "#333535",
+                        "surface-dim": "#121414",
+                        "primary-fixed": "#dfe2f3",
+                        "primary": "#c3c6d7",
+                        "surface-tint": "#c3c6d7",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#777b8a",
+                        "outline-variant": "#46464c",
+                        "on-surface": "#e2e2e2",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#c3c6d7",
+                        "tertiary-container": "#0e0e0e",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Bodoni Moda"],
+                        "headline-md": ["Bodoni Moda"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Bodoni Moda"],
+                        "display-hero": ["Bodoni Moda"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "38px", "fontWeight": "700" }],
+                        "display-hero": ["84px", { "lineHeight": "92px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .paper-cut-shadow {
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5)) drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+        }
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/40 dark:bg-surface-container-lowest/40 backdrop-blur-xl border-b border-white/10 dark:border-secondary/20 shadow-2xl docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 w-full max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg-mobile md:text-headline-lg tracking-tighter text-secondary dark:text-secondary-fixed shadow-glow">
+                WORLD CUP 26
+            </div>
+<nav class="hidden md:flex items-center gap-8 font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-blur-3xl duration-300" href="#">Match Center</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-blur-3xl duration-300" href="#">Standings</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors hover:backdrop-blur-3xl duration-300" href="#">Bracket</a>
+<a class="text-secondary dark:text-secondary-fixed-dim border-b-2 border-secondary pb-1 scale-95 active:scale-90 transition-transform" href="#">Teams</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="hidden md:flex text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">language</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<button class="bg-secondary text-on-secondary font-label-caps text-label-caps px-6 py-2 rounded-full hover:shadow-[0_0_15px_rgba(233,195,73,0.4)] transition-all scale-95 active:scale-90">
+                    Tickets
+                </button>
+</div>
+</div>
+</header>
+<main class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-20 pb-40">
+<!-- Texture Overlay for entire main content -->
+<div class="absolute inset-0 texture-overlay z-[-1]"></div>
+<!-- Timeline Section -->
+<section class="relative mb-32">
+<div class="text-center mb-20 relative">
+<h1 class="font-display-hero text-[60px] md:text-display-hero text-on-surface relative z-10">THE LEGACY</h1>
+<p class="font-label-caps text-label-caps text-secondary mt-4 tracking-[0.2em]">1930 — 2026</p>
+<!-- Decorative background text -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display-hero text-[120px] md:text-[200px] text-stroke whitespace-nowrap z-0 opacity-50 pointer-events-none">HISTORY</div>
+</div>
+<div class="relative max-w-4xl mx-auto">
+<!-- Vertical Line -->
+<div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-white/20 -translate-x-1/2"></div>
+<!-- Timeline Items -->
+<div class="space-y-24">
+<!-- 1930 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+<div class="absolute left-4 md:left-1/2 w-4 h-4 bg-secondary rotate-45 -translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_10px_rgba(233,195,73,0.8)] z-10"></div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 text-left md:text-right">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-secondary">1930</h2>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4">URUGUAY</h3>
+<p class="font-body-md text-body-md text-on-surface/80">The inaugural tournament set the stage. Thirteen teams gathered in Montevideo to begin a tradition that would unite the globe in a shared passion.</p>
+</div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 mt-8 md:mt-0">
+<div class="relative h-64 w-full bg-surface-container-high rounded-lg overflow-hidden border border-white/10 paper-cut-shadow group-hover:border-secondary/50 transition-colors duration-500">
+<img alt="" class="w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700" data-alt="A vintage, sepia-toned cinematic photograph of an old leather soccer ball resting on dusty grass inside a massive, classic 1930s concrete stadium. Dramatic, high-contrast sunlight casts long shadows across the pitch, evoking a sense of raw history and the dawn of a global sporting era. The mood is nostalgic and monumental." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSGMANKawDdY0UyyTZkMKNdqyXcqOtmSdhNeK5uCK-ypIsO-cOnrxAbpC8amxIElvh9ycXo6R4_8xS-zsOc_czCG7oB75IT3MpD9KVq1ojo-K1z8rLCO-df4EfBGKHR5wEUj_vCiDZ2tVLIsFCLEBOQbeF_zqF2PfOQa4B6f7fm0UBRwafLWx7zs_iJL0lqjnxmwt1k5aS_1x9Dd2FF0b8uBJiHuPjVzi-wfx63hqRYTRAjR8jyMZI_BwKN2G-5Kx-ZgcQ1YWxLZM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+<!-- 1970 -->
+<div class="relative flex flex-col md:flex-row-reverse items-center md:justify-between group">
+<div class="absolute left-4 md:left-1/2 w-4 h-4 bg-surface-container-highest border border-secondary rotate-45 -translate-x-1/2 mt-6 md:mt-0 z-10 transition-colors group-hover:bg-secondary"></div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pl-12 text-left">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-secondary">1970</h2>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4">MEXICO</h3>
+<p class="font-body-md text-body-md text-on-surface/80">The beautiful game in vibrant color. A tournament defined by attacking flair, legendary squads, and the iconic Jules Rimet trophy finding a permanent home.</p>
+</div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 mt-8 md:mt-0">
+<div class="relative h-64 w-full bg-surface-container-high rounded-lg overflow-hidden border border-white/10 paper-cut-shadow group-hover:border-secondary/50 transition-colors duration-500">
+<img alt="" class="w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-700" data-alt="A vibrant, cinematic photograph capturing a sea of energetic football fans in a stadium from the 1970s. The crowd is awash in bold, saturated colors—bright yellows, greens, and reds—contrasting against deep, moody shadows in the stands. The atmosphere is electric and chaotic, feeling like a high-end editorial spread of historical sports passion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjqfIBejCykf4AunOd7L7176DzvPx05JMiOQhHZ6G9Gq8ny09jH1Vj-8BBMDD2v0Z4oxN12U18Bl9SfOldkT3MrqOSvVR6-3ewlhsB103TS-s_Rig2HVIYFq0TBOh-l6_Uv44ZpMQYlFVbr7gCkkhnTr75RLGGsPTV5Jqc4WXs9tNoopSrzB0bdWjr99j_8wYGw9wdg9hz5lZyqBe6Hhj6rQtOMZAL_qUWaV-9v0ILrN7oLx7nkbyoV_X0eRSaQyGkzmlYfi-XlgE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+<!-- 2026 -->
+<div class="relative flex flex-col md:flex-row items-center md:justify-between group">
+<div class="absolute left-4 md:left-1/2 w-6 h-6 bg-secondary rotate-45 -translate-x-1/2 mt-6 md:mt-0 shadow-[0_0_20px_rgba(233,195,73,1)] z-10 animate-pulse"></div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 md:pr-12 text-left md:text-right">
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-secondary">2026</h2>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-4">USA • CANADA • MEXICO</h3>
+<p class="font-body-md text-body-md text-on-surface/80">The largest stage ever built. 48 teams spanning a continent, ready to write the next monumental chapter in the history of the sport.</p>
+</div>
+<div class="w-full md:w-[45%] pl-12 md:pl-0 mt-8 md:mt-0">
+<div class="relative h-64 w-full bg-surface-container-high rounded-lg overflow-hidden border border-secondary/50 paper-cut-shadow">
+<img alt="" class="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" data-alt="A hyper-modern, cinematic shot of a colossal, futuristic soccer stadium illuminated at night. Intense, dramatic lighting cuts through the dark sky, highlighting the sleek architectural curves. The pitch glows a vibrant emerald green against the midnight black surroundings. The image has a premium, 'money-is-no-object' aesthetic, symbolizing the pinnacle of global sports." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB8R1Gt-MTZWstTm4kNiGNXxejqlbHTkQxiFbQAEj45wSnphrbivaJzJ43wrYZEAyajnPIxpS_3KU6ahnzDvNql0EFLu2vXHM0hCmwQzTWQGaoFkJ2f5t1vo01eZ_SeXpfJa9jSLi4Gb7l9f_vYdXsBPPtgW6kjGRa38PtpUw9q0OjklVyI7md2BOCFrsCBaJRnh_RdML_gpfJJvXG4Rj5pU_7cKFEtNWt4z1A8ZWP6OwyQ9yaJfJk5qYnWhptovXXFgLrBzGCJAg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-40"></div>
+<div class="absolute top-4 right-4 border border-white/20 px-3 py-1 rounded-full backdrop-blur-md bg-black/30 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-ping"></div>
+<span class="font-label-caps text-[10px] text-white tracking-widest">NEXT</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-32 w-full flex justify-center items-center opacity-20">
+<span class="material-symbols-outlined text-[48px] text-secondary">keyboard_double_arrow_down</span>
+</div>
+<!-- Teams Hub Section -->
+<section class="relative">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface">CONTENDERS</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">The nations vying for ultimate glory.</p>
+</div>
+<button class="hidden md:flex items-center gap-2 text-secondary font-label-caps text-label-caps hover:text-white transition-colors">
+                    VIEW ALL <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Bento Grid for Teams -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Card 1: France (Large, Main Focus) -->
+<div class="md:col-span-8 relative h-[500px] rounded-xl overflow-hidden group bg-surface-container border border-white/10 hover:border-secondary/30 transition-colors paper-cut-shadow">
+<!-- Background Environment -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary-container to-surface-container-lowest z-0"></div>
+<!-- Player Image (Paper-cut style) -->
+<img alt="Kylian Mbappe" class="absolute bottom-0 right-0 h-[110%] object-contain z-10 transition-transform duration-700 group-hover:scale-105 origin-bottom drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qy762qp5-_n3k0YC4ZRrG7mon4jGY968ocY5UWt3QxThhjgzwgIIQmvQvjOjTrIfT9Bh6S1kt_loKJ10uytkWfN_g8Ry05cawQsN9zRPnDPedMn9ywayn2BH8ADWdTzkmUTZK0GOIIUf_RgCuZJwe6KokLlCUyKqyZjEeZToO9tuALd71byRPj4pMHw4AaGDX4g7aakMd7283Uo_rVOVQcTpAqgXsUTsrM3x_4_4OhDfZk-c_EMKawPC0goTXKtGBWTsTfMbiM4"/>
+<!-- Gradient Overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent z-10"></div>
+<!-- Content -->
+<div class="absolute inset-0 p-8 z-20 flex flex-col justify-between pointer-events-none">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-high/80 backdrop-blur-md border border-white/10 rounded-lg p-2 inline-flex items-center gap-3">
+<span class="text-2xl">🇫🇷</span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">FRANCE</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-secondary opacity-20 group-hover:opacity-40 transition-opacity">#2</div>
+</div>
+<div class="max-w-sm pointer-events-auto">
+<h3 class="font-headline-lg text-headline-lg text-on-surface leading-tight mb-2">LES BLEUS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">A powerhouse looking to cement their legacy on the world stage once more, led by a generation of unmatched talent.</p>
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1">COACH</p>
+<p class="font-body-md text-sm text-on-surface font-bold">Didier Deschamps</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1">KEY PLAYER</p>
+<p class="font-body-md text-sm text-secondary font-bold">K. Mbappe</p>
+</div>
+</div>
+<button class="w-full bg-white/5 hover:bg-secondary hover:text-on-secondary text-secondary border border-secondary/50 font-label-caps text-label-caps py-3 rounded-lg transition-all duration-300">
+                                TEAM PROFILE
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Spain (Stacked right) -->
+<div class="md:col-span-4 relative h-[500px] rounded-xl overflow-hidden group bg-surface-container border border-white/10 hover:border-secondary/30 transition-colors paper-cut-shadow">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-high to-surface-container-lowest z-0"></div>
+<img alt="Lamine Yamal" class="absolute bottom-0 right-[-10%] h-[90%] object-contain z-10 transition-transform duration-700 group-hover:scale-105 origin-bottom drop-shadow-[0_10px_20px_rgba(0,0,0,0.6)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR9mkM06Aw0QpmeoLE45mxHIB6MP-8TjN2h6_ctml71AfjZMDnP3vL6le2Z0ZZrYNF-ClpmGRXevc-W2E73gf5PrVdpSnH5G3qpVJ2-wrEtbe97R0Key5BCHjbldcQ10VodyJuMZUBETfibXPw7-L5aPVJUQIUSsl9LDMEnMj3XiBCZFqo8eSOXr-v570WnBZjU8xevHx6f7JKiP51zFm0ifoSQ8NCrJrIp9PGP2g0WhLSaAD3plci1vaQ0cGy9uxnEQD8-4cQwh8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-transparent z-10"></div>
+<div class="absolute inset-0 p-6 z-20 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="bg-surface-container-high/80 backdrop-blur-md border border-white/10 rounded-lg p-2 inline-flex items-center gap-2">
+<span class="text-xl">🇪🇸</span>
+<span class="font-label-caps text-[10px] text-on-surface font-bold">SPAIN</span>
+</div>
+<div class="font-headline-md text-headline-md text-secondary opacity-20">#8</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">LA ROJA</h3>
+<p class="font-label-caps text-[10px] text-secondary mb-4">THE NEW GENERATION</p>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-secondary transition-colors font-label-caps text-[10px]">
+                                EXPLORE <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: England (Full width below) -->
+<div class="md:col-span-12 relative h-[300px] rounded-xl overflow-hidden group bg-surface-container border border-white/10 hover:border-secondary/30 transition-colors paper-cut-shadow">
+<div class="absolute inset-0 bg-surface-container-lowest z-0"></div>
+<!-- Wide player cut-out layout -->
+<img alt="Harry Kane" class="absolute bottom-0 right-12 h-[120%] object-contain z-10 transition-transform duration-700 group-hover:-translate-x-4 drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqPHhRlOlESgut7P3nWnV1HWmfG9nsksv62OBSFRGd7t31ln_htDFJLCM8Oox3uOCzw4kPTXO9qKtbwHYIsrv8IBBs_UKhlXPRBKnHOQ0gFJ0waNDqpeD_zZN_BgzboVRZTTCCYhoywk6TDX2PTUyjU1rBaV92rA7WtFamFtwm7vcBW21HG0n9IwjOzBEMc48Z35A4dQW6hdTSSrzz7WqB3Cu7L-7I-31363kGil9W0U1G1ffbkSh3xWam7Bg6ajRtoYZcUzwlslQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent z-10"></div>
+<div class="absolute inset-0 p-8 z-20 flex flex-col md:flex-row justify-between items-start md:items-center">
+<div class="max-w-md">
+<div class="bg-surface-container-high/80 backdrop-blur-md border border-white/10 rounded-lg p-2 inline-flex items-center gap-3 mb-4">
+<span class="text-2xl">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">ENGLAND</span>
+</div>
+<h3 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-2">THREE LIONS</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Searching for history across the Atlantic. A squad blending immense experience with explosive youth.</p>
+</div>
+<div class="flex gap-8 mt-6 md:mt-0 mr-0 md:mr-64 bg-surface-container-high/50 p-4 rounded-lg border border-white/5 backdrop-blur-sm">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1">COACH</p>
+<p class="font-body-md text-sm text-on-surface font-bold">Gareth Southgate</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1">RANKING</p>
+<p class="font-headline-md text-2xl text-secondary font-bold">3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="md:hidden w-full mt-8 flex justify-center items-center gap-2 text-secondary font-label-caps text-label-caps border border-secondary/30 py-4 rounded-lg hover:bg-secondary/10 transition-colors">
+                VIEW ALL TEAMS
+            </button>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only based on design system rules for responsive pivot) -->
+<nav class="md:hidden fixed bottom-8 left-1/2 -translate-x-1/2 w-fit min-w-[320px] rounded-full border border-white/20 bg-surface-container-low/60 dark:bg-surface-container-lowest/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-50 flex justify-between items-center px-4 py-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1">sensors</span>
+<span class="font-label-caps text-[10px]">Live</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary text-on-secondary rounded-full p-3 shadow-[0_0_15px_rgba(233,195,73,0.4)] scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-caps text-[10px]">Teams</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1">account_tree</span>
+<span class="font-label-caps text-[10px]">Bracket</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1">photo_library</span>
+<span class="font-label-caps text-[10px]">Gallery</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest border-t border-white/5 full-width py-20 mt-20 relative z-10 pb-32 md:pb-20">
+<div class="w-full px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<div class="font-headline-md text-headline-md text-secondary mb-4">WORLD CUP 26</div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-60">© 2026 FIFA World Cup. All Rights Reserved. Immersive Experience Powered by Living Tournament.</p>
+</div>
+<div class="col-span-1 flex flex-col gap-4 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Tournament Rules</a>
+<a class="text-on-surface-variant hover:text-white transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>
